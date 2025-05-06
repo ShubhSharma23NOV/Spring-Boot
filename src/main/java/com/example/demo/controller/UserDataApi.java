@@ -13,7 +13,7 @@ import com.example.demo.entity.User;
 public class UserDataApi{
 	@Autowired
 	ServiceImpl impl;
-		@RequestMapping("/UserData2")
+		@RequestMapping("/UserData4")
 		public String User(@RequestBody User user){
 			user=impl.createUser(user);
 			return user.toString();
