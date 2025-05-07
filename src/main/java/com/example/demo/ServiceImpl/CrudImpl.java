@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.UserService.Crud;
 import com.example.demo.entity.User;
+import com.example.demo.exception.UserNotFoundException;
 
 @Service
 public class CrudImpl implements Crud{
@@ -24,7 +25,7 @@ public class CrudImpl implements Crud{
 	}
 
 	@Override
-	public User updateUser(String id, User user) {
+	public User updateUser(String id, User user){
 		for(User u:li){
 			if(u.getId().equals(id)){
 				u.setName(user.getName());
@@ -32,7 +33,7 @@ public class CrudImpl implements Crud{
 				return u;
 			}
 		}
-		return null;
+		throw new UserNotFoundException("User with ID " + id + " not found.");
 	}
 
 	@Override
@@ -43,7 +44,7 @@ public class CrudImpl implements Crud{
 				return u;
 			}
 		}
-		return null;
+		throw new UserNotFoundException("User with ID " + id + " not found.");
 	}
 	
 }
