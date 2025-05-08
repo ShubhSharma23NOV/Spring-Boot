@@ -12,4 +12,9 @@ public class globalexceptionhandler {
 	public RequestStatus handleUserNotFoundException(UserNotFoundException ue){
 		return new RequestStatus(ue.getMessage(),200);
 	}
+	@ExceptionHandler(org.springframework.web.servlet.resource.NoResourceFoundException.class)
+	public String handleNoResourceFoundException(org.springframework.web.servlet.resource.NoResourceFoundException e) {
+		return "Page Not Found";
+	}
+	
 }
