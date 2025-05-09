@@ -24,9 +24,9 @@ public class CrudApi{
 	@Autowired
 	private CrudImpl impl;
 	@PostMapping("/user")
-	public ResponseEntity<User> createUser(@RequestBody User user){
+	public User createUser(@RequestBody User user){
 		user=impl.createUser(user);
-		return new ResponseEntity<User>(user, HttpStatus.OK);
+		return user;
 	}
 	@GetMapping("/user")
 	public List<User> allUser(){
