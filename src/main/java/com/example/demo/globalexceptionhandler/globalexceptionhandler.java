@@ -25,8 +25,6 @@ public class globalexceptionhandler {
 	    public String handleNoSuchElementException(NoSuchElementException ex) {
 	        return ex.getMessage();
 	    }
-
-	    // other exception handlers...
 	}
 
 	

@@ -2,12 +2,10 @@ package com.example.demo.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class User1 {
 	@Column
 	private String name;
 	@Column
@@ -21,8 +19,8 @@ public class User {
 	public String toString() {
 		return "User [Name=" + name + ", userName=" + userName + ", password=" + password + ", id=" + id + "]";
 	}
-	public User() {}
-	public User(String name, String userName, String password) {
+	public User1() {}
+	public User1(String name, String userName, String password) {
 		super();
 		this.name = name;
 		this.userName = userName;
